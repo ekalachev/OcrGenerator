@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OcrGenerator.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Location" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1031</Value>
+    </Setting>
+    <Setting Name="Solr" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://fihel2suas150.groupad1.com:8983/solr/matcher_payments_se/update/json/docs?commit=true</Value>
+    </Setting>
+    <Setting Name="Environments" Type="System.String" Scope="User">
+      <Value Profile="(Default)">[{"Name":"Test","Url":"http://fihel2stas143.groupad1.com:8983/solr/matcher_payments_{0}/update/json/docs?commit=true"},{"Name":"UAT","Url":"http://fihel2suas150.groupad1.com:8983/solr/matcher_payments_{0}/update/json/docs?commit=true"}]</Value>
+    </Setting>
+    <Setting Name="Indexes" Type="System.String" Scope="User">
+      <Value Profile="(Default)">[{"Name":"se"},{"Name":"fi"}]</Value>
+    </Setting>
+    <Setting Name="SelectedEnvironment" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SelectedIndex" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Fields" Type="System.String" Scope="User">
+      <Value Profile="(Default)">[{"Name":"ocr","Type":1,"Length":10,"Prefix":"7008","Value":""},{"Name":"case","Type":1,"Length":7,"Prefix":null,"Value":""},{"Name":"debtor","Type":0,"Length":20,"Prefix":null,"Value":""}]</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
