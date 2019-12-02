@@ -13,24 +13,31 @@ namespace OcrGenerator.Services
             _random = new Random();
         }
 
-        public string Generate(FieldType type, string prefix, int length)
+        public string Generate(FieldViewModel field)
         {
-            if (type == FieldType.DebtorName)
-                return string.Format("{0}{1} {2}", prefix, ToTitleCase(RandomString(length / 2, true)), ToTitleCase(RandomString(length / 2, true)));
+            if (field.Type == FieldType.DebtorName)
+                return string.Format("{0}{1} {2}{3}",
+                    field.Prefix,
+                    ToTitleCase(RandomString(field.Length / 2, true)),
+                    ToTitleCase(RandomString(field.Length / 2, true)),
+                    field.Postfix);
 
-            if (type == FieldType.String)
-                return string.Format("{0}{1}", prefix, RandomString(length, false));
+            if (field.Type == FieldType.String)
+                return string.Format("{0}{1}{2}",
+                    field.Prefix,
+                    RandomString(field.Length, false),
+                    field.Postfix);
 
             string maxRandomNumStr = "";
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < field.Length; i++)
                 maxRandomNumStr += "9";
 
             if (!int.TryParse(maxRandomNumStr, out int maxRandomVal))
                 maxRandomVal = int.MaxValue;
 
-            var pattern = GeneratePattern(length);
+            var pattern = GeneratePattern(field.Length);
 
-            return string.Format(pattern, prefix, _random.Next(maxRandomVal));
+            return string.Format(pattern, field.Prefix, _random.Next(maxRandomVal), field.Postfix);
         }
 
         private string ToTitleCase(string str)
@@ -44,7 +51,7 @@ namespace OcrGenerator.Services
             for (int i = 0; i < length; i++)
                 pattern += "0";
 
-            return pattern + "}";
+            return pattern + "}{2}";
         }
 
         private string RandomString(int size, bool lowerCase)

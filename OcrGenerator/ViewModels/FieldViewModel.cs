@@ -10,6 +10,7 @@ namespace OcrGenerator
         public FieldType Type { get; set; }
         public int Length { get; set; }
         public string Prefix { get; set; }
+        public string Postfix { get; set; }
         public string Value
         {
             get { return _value; }

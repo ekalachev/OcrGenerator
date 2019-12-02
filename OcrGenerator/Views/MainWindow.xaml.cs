@@ -49,7 +49,7 @@ namespace OcrGenerator.Views
                 if (field.IsNotRandom)
                     continue;
 
-                field.Value = _fieldsGenerator.Generate(field.Type, field.Prefix, field.Length);
+                field.Value = _fieldsGenerator.Generate(field);
             }
 
             _settingsManager.SaveMainWindowViewModel(_viewModel);
