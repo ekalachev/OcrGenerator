@@ -6,6 +6,10 @@ namespace OcrGenerator.ViewModels
     {
         public ObservableCollection<FieldViewModel> Fields { get; set; }
 
+        public ObservableCollection<EnvironmentViewModel> Environments { get; set; }
+
+        public ObservableCollection<IndexViewModel> Indexes { get; set; }
+
         private string _status;
         public string Status
         {
@@ -47,28 +51,6 @@ namespace OcrGenerator.ViewModels
             {
                 _selectedIndex = value;
                 OnPropertyChanged(nameof(SelectedIndex));
-            }
-        }
-
-        private ObservableCollection<EnvironmentViewModel> _environments;
-        public ObservableCollection<EnvironmentViewModel> Environments
-        {
-            get { return _environments; }
-            set
-            {
-                _environments = value;
-                OnPropertyChanged(nameof(Environments));
-            }
-        }
-
-        private ObservableCollection<IndexViewModel> _indexes;
-        public ObservableCollection<IndexViewModel> Indexes
-        {
-            get { return _indexes; }
-            set
-            {
-                _indexes = value;
-                OnPropertyChanged(nameof(Indexes));
             }
         }
     }
