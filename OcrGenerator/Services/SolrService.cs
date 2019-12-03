@@ -55,7 +55,7 @@ namespace OcrGenerator.Services
 
             return JsonConvert.SerializeObject(new
             {
-                key = location + "_case_" + @case,
+                key = location + "_case_" + @case.Value,
                 type = "case",
                 location,
                 fields
