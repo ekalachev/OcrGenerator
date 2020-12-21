@@ -15,6 +15,9 @@ namespace OcrGenerator.Services
 
         public string Generate(FieldViewModel field)
         {
+            if (field == null)
+                throw new ArgumentNullException(nameof(field));
+            
             if (field.Type == FieldType.DebtorName)
                 return string.Format("{0}{1} {2}{3}",
                     field.Prefix,
